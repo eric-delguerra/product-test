@@ -37,6 +37,7 @@ let database = firebase.database()
 app.get('/', (req, res) => {
     database.ref('/').once('value')
         .then(function(snapshot) {
+            res.setHeader('Content-Type', 'application/json');
             res.json(snapshot.val())
         })
 })
