@@ -35,10 +35,11 @@ let database = firebase.database()
 
 
 app.get('/', (req, res) => {
-    res.send(database.ref('/').once('value')
+    database.ref('/').once('value')
         .then(function(snapshot) {
-            return snapshot.val()
-        }))
+            console.log(snapshot.val())
+            res.send(snapshot.val())
+        })
 })
 
 
