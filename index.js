@@ -42,6 +42,13 @@ app.get('/', (req, res) => {
         })
 })
 
+app.get('/value', (req, res) => {
+    database.ref('/').once('value')
+        .then(function(snapshot) {
+            res.send('Valeur de test')
+        })
+})
+
 
 app.listen(port, () => {
     console.log(`Am listening at http://localhost:${port}`)
