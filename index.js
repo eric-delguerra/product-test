@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 let firebase = require('firebase')
-let port = 80
+let port = process.env.PORT || 3000
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
